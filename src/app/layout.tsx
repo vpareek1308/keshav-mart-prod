@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Keshav Mart | Modern grocery, parcel, and packaging",
+  title: "Keshav Mart",
   description:
     "Discover Keshav Mart — a modern, no-fuss grocery experience with parcel drop-off and custom packaging services, ready to grow with your needs.",
 };
