@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffaf3;
-  --foreground: #1f1a17;
+  --background: #fffbfa;
+  --foreground: #2d2523;
   --surface: #ffffff;
-  --muted: #5c524d;
-  --primary: #156c3e;
-  --primary-strong: #0f4f2d;
-  --accent: #e3b341;
-  --ring: rgba(21, 108, 62, 0.16);
+  --surface-soft: #fff5f2;
+  --muted: #6b5e5a;
+  --primary: #ff8a7a;
+  --primary-strong: #ff6b5b;
+  --accent: #ffb88c;
+  --border: #f0e6e4;
+  --border-hover: #e5d8d5;
+  --surface-hover: #fff0ed;
+  --ring: rgba(255, 138, 122, 0.3);
 }
 
 @theme inline {
@@ -28,9 +32,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 18% 18%, rgba(21, 108, 62, 0.08), transparent 28%),
-    radial-gradient(circle at 80% 10%, rgba(227, 179, 65, 0.15), transparent 30%),
-    linear-gradient(180deg, #fffaf3 0%, #fffdf8 55%, #f8f1e9 100%);
+    radial-gradient(circle at 18% 18%, rgba(255, 138, 122, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(255, 184, 140, 0.15), transparent 30%),
+    linear-gradient(180deg, #fffbfa 0%, #fffdfb 55%, #faf5f3 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   letter-spacing: -0.01em;
@@ -42,6 +46,6 @@ a {
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.16);
-  color: #0b1221;
+  background: rgba(255, 138, 122, 0.25);
+  color: var(--foreground);
 }
