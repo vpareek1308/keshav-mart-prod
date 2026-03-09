@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Keshav Mart",
+  title: "Keshav Mart — Asian Groceries, Snacks & Post & Packing | Shenley Brook End",
   description:
-    "Discover Keshav Mart — a modern, no-fuss grocery experience with parcel drop-off and custom packaging services, ready to grow with your needs.",
+    "Keshav Mart at 52 Egerton Gate, Shenley Brook End, Milton Keynes. Asian groceries, snacks, sweets & post and packing services. Worldwide shipping via EVRi, DPD & DHL. Call 01908 018808.",
 };
 
 export default function RootLayout({

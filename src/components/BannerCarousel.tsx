@@ -6,20 +6,32 @@ import Link from "next/link";
 
 const slides = [
   {
+    id: "opening",
+    title: "Opening 14th March!",
+    subtitle: "Shenley Brook End, Milton Keynes",
+    description:
+      "Visit us at 52 Egerton Gate for all your shipping & grocery needs. 10% off orders over £20 — in store only.",
+    cta: "Find us",
+    href: "#location",
+    image: "/keshav-mart-logo-square.png",
+  },
+  {
     id: "groceries",
-    title: "Fresh Groceries",
-    subtitle: "Pure veg options available • No onion/garlic options",
-    description: "Daily essentials, snacks, spices, and frozen favourites—delivered with care.",
-    cta: "Shop groceries",
+    title: "Asian Groceries, Snacks & Sweets",
+    subtitle: "Shop for Asian & Indian products",
+    description:
+      "Authentic spices, fresh snacks, traditional sweets & everyday pantry essentials — all under one roof.",
+    cta: "See what we stock",
     href: "#store",
     image: "/keshav-mart-logo-square.png",
   },
   {
-    id: "packaging",
-    title: "Packaging & Parcels",
-    subtitle: "Drop, print, wrap—all in one spot",
-    description: "Parcel drop-off, label printing, and packaging supplies. Cold chain? We add gel packs.",
-    cta: "Packaging services",
+    id: "post",
+    title: "Post & Packing Services",
+    subtitle: "Worldwide shipping via EVRi, DPD & DHL",
+    description:
+      "PO boxes, packaging supplies, printing, photocopying & full pick-and-pack service. Free delivery within 2 miles.",
+    cta: "Our services",
     href: "#packaging",
     image: "/keshav-mart-logo-square.png",
   },

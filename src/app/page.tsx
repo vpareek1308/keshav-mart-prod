@@ -3,22 +3,23 @@ import Link from "next/link";
 import { BannerCarousel } from "@/components/BannerCarousel";
 
 const featured = [
-  { title: "Daily Veg Essentials", price: "from £12", note: "Pure veg options available • No onion/garlic options" },
-  { title: "Snacks & Farsan", price: "from £3.50", note: "Ready to serve classics" },
-  { title: "Spices & Pantry", price: "from £5", note: "Small-batch, aroma locked" },
-  { title: "Frozen Favourites", price: "from £14", note: "Arrives with insulated care" },
+  { title: "Asian Groceries", note: "Wide range of authentic Asian & Indian products" },
+  { title: "Snacks & Farsan", note: "Ready-to-serve classics & savoury favourites" },
+  { title: "Sweets & Mithai", note: "Traditional Indian sweets & desserts" },
+  { title: "Spices & Pantry", note: "Authentic spices, atta, dal & everyday essentials" },
 ];
 
 const packagingOptions = [
-  { title: "Parcel Drop", detail: "Bring labels, we hand to couriers.", tag: "Quick handoff" },
-  { title: "Print & Pack", detail: "Labels, cushioning, tape—done here.", tag: "Ready to send" },
-  { title: "Packaging Bar", detail: "Honeycomb wrap, gel packs, sturdy boxes.", tag: "Eco & chilled" },
+  { title: "Worldwide Shipping", detail: "Send parcels anywhere via EVRi, DPD & DHL.", tag: "Post & Packing" },
+  { title: "PO Boxes & Packaging", detail: "Boxes, cushioning, tape & packaging supplies.", tag: "Ready to send" },
+  { title: "Printing & Photocopying", detail: "Labels, documents, photocopying & more.", tag: "Quick service" },
+  { title: "Pick & Pack", detail: "We pick, pack & ship your items for you.", tag: "Full service" },
 ];
 
-const BUCKINGHAM_PALACE_EMBED =
-  "https://www.openstreetmap.org/export/embed.html?bbox=-0.155%2C51.495%2C-0.129%2C51.508&layer=mapnik&marker=51.5014,-0.1419";
-const BUCKINGHAM_PALACE_GOOGLE_MAPS =
-  "https://www.google.com/maps/search/?api=1&query=Buckingham+Palace,+London+SW1A+1AA";
+const STORE_MAP_EMBED =
+  "https://www.openstreetmap.org/export/embed.html?bbox=-0.796%2C52.008%2C-0.771%2C52.021&layer=mapnik&marker=52.014487,-0.783542";
+const STORE_GOOGLE_MAPS =
+  "https://www.google.com/maps/search/?api=1&query=52+Egerton+Gate,+Shenley+Brook+End,+MK5+7HH";
 
 export default function Home() {
   return (
@@ -32,21 +33,16 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">
               Store
             </p>
-            <h2 className="text-2xl font-semibold tracking-tight">Groceries to buy</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Asian Groceries, Snacks & Sweets</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {featured.map((item) => (
               <article
                 key={item.title}
-                className="flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-4 transition hover:border-[var(--border-hover)]"
+                className="rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-4 transition hover:border-[var(--border-hover)]"
               >
-                <div>
-                  <h3 className="font-semibold">{item.title}</h3>
-                  <p className="text-sm text-[var(--muted)]">{item.note}</p>
-                </div>
-                <span className="rounded-full bg-[var(--primary)] px-3 py-1 text-xs font-semibold text-white">
-                  {item.price}
-                </span>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="mt-1 text-sm text-[var(--muted)]">{item.note}</p>
               </article>
             ))}
           </div>
@@ -55,11 +51,11 @@ export default function Home() {
         <section id="packaging" className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm">
           <div className="mb-4 flex flex-col gap-1">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary)]">
-              Parcels & Packaging
+              Post & Packing
             </p>
-            <h2 className="text-2xl font-semibold tracking-tight">Value and packaging options</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Shipping & packaging services</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {packagingOptions.map((service) => (
               <div
                 key={service.title}
@@ -85,12 +81,12 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex flex-col justify-center gap-4">
               <p className="text-xl font-semibold text-[var(--foreground)] md:text-2xl">
-                Buckingham Palace
+                52 Egerton Gate
               </p>
-              <p className="text-lg text-[var(--muted)]">London SW1A 1AA</p>
-              <p className="text-sm text-[var(--muted)]">(Sample location)</p>
+              <p className="text-lg text-[var(--muted)]">Shenley Brook End, Milton Keynes</p>
+              <p className="text-sm text-[var(--muted)]">MK5 7HH</p>
               <Link
-                href={BUCKINGHAM_PALACE_GOOGLE_MAPS}
+                href={STORE_GOOGLE_MAPS}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-fit items-center gap-2 rounded-full bg-[var(--primary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--primary-strong)]"
@@ -100,8 +96,8 @@ export default function Home() {
             </div>
             <div className="relative min-h-[240px] overflow-hidden rounded-xl border border-[var(--border)]">
               <iframe
-                title="Store location map - Buckingham Palace"
-                src={BUCKINGHAM_PALACE_EMBED}
+                title="Store location map - 52 Egerton Gate, Shenley Brook End"
+                src={STORE_MAP_EMBED}
                 className="absolute inset-0 h-full w-full"
                 allowFullScreen
                 loading="lazy"
@@ -118,48 +114,42 @@ export default function Home() {
             </p>
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Contact information</h2>
             <p className="max-w-xl text-[var(--muted)]">
-              Drop by for groceries, parcels, or packaging. We&apos;re here to help.
+              Visit us for all your shipping &amp; grocery needs. We&apos;re here to help.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             <Link
-              href="tel:01234567890"
+              href="tel:01908018808"
               className="group flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-5 transition hover:border-[var(--primary)] hover:bg-[var(--surface-hover)]"
             >
               <p className="text-sm font-semibold uppercase tracking-wide text-[var(--muted)]">Phone</p>
               <p className="text-lg font-semibold text-[var(--foreground)] group-hover:text-[var(--primary)]">
-                0123 456 7890
+                01908 018808
               </p>
               <span className="text-xs font-medium text-[var(--primary)]">Tap to call</span>
             </Link>
-            <Link
-              href="mailto:hello@keshavmart.test"
-              className="group flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-5 transition hover:border-[var(--primary)] hover:bg-[var(--surface-hover)]"
-            >
-              <p className="text-sm font-semibold uppercase tracking-wide text-[var(--muted)]">Email</p>
-              <p className="break-words text-lg font-semibold text-[var(--foreground)] group-hover:text-[var(--primary)]">
-                hello@keshavmart.test
-              </p>
-              <span className="text-xs font-medium text-[var(--primary)]">Tap to email</span>
-            </Link>
             <div className="flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] p-5">
-              <p className="text-sm font-semibold uppercase tracking-wide text-[var(--muted)]">Hours</p>
-              <p className="text-lg font-semibold text-[var(--foreground)]">Mon–Sat · 9am–8pm</p>
-              <p className="text-sm text-[var(--muted)]">Closed Sundays</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-[var(--muted)]">Address</p>
+              <p className="text-lg font-semibold text-[var(--foreground)]">
+                52 Egerton Gate
+              </p>
+              <span className="text-xs font-medium text-[var(--muted)]">Shenley Brook End, MK5 7HH</span>
             </div>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="tel:01234567890"
+              href="tel:01908018808"
               className="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-white shadow transition hover:bg-[var(--primary-strong)]"
             >
               Call us
             </Link>
             <Link
-              href="mailto:hello@keshavmart.test"
+              href={STORE_GOOGLE_MAPS}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border-2 border-[var(--primary)] px-6 py-3 text-sm font-semibold text-[var(--primary)] transition hover:bg-[var(--surface-hover)]"
             >
-              Email us
+              Get directions
             </Link>
           </div>
         </section>
@@ -186,7 +176,7 @@ function Header() {
           </div>
           <div>
             <p className="text-lg font-semibold">Keshav Mart</p>
-            <p className="text-xs text-[var(--muted)]">Grocery • Parcel • Packaging</p>
+            <p className="text-xs text-[var(--muted)]">Asian Groceries • Post & Packing</p>
           </div>
         </Link>
         <nav className="hidden items-center gap-4 text-sm font-semibold text-[var(--muted)] md:flex">
@@ -212,11 +202,11 @@ function Footer() {
   return (
     <footer className="mt-16 border-t border-[var(--border)] bg-white/90">
       <div className="mx-auto max-w-6xl px-6 py-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-3">
           <div>
             <p className="text-lg font-semibold">Keshav Mart</p>
             <p className="mt-1 text-sm text-[var(--muted)]">
-              Groceries with pure veg options, plus parcel & packaging help.
+              Asian groceries, snacks & sweets, plus post & packing services.
             </p>
           </div>
           <div>
@@ -232,16 +222,11 @@ function Footer() {
             <p className="text-sm font-semibold text-[var(--foreground)]">Contact</p>
             <div className="mt-2 space-y-1 text-sm text-[var(--muted)]">
               <p>
-                <Link href="tel:01234567890" className="hover:text-[var(--primary)]">0123 456 7890</Link>
+                <Link href="tel:01908018808" className="hover:text-[var(--primary)]">01908 018808</Link>
               </p>
-              <p>
-                <Link href="mailto:hello@keshavmart.test" className="hover:text-[var(--primary)]">hello@keshavmart.test</Link>
-              </p>
+              <p>52 Egerton Gate</p>
+              <p>Shenley Brook End, MK5 7HH</p>
             </div>
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-[var(--foreground)]">Hours</p>
-            <p className="mt-2 text-sm text-[var(--muted)]">Mon–Sat · 9am–8pm</p>
           </div>
         </div>
       </div>
